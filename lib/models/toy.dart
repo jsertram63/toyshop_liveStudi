@@ -7,9 +7,9 @@ class Toy {
   final String description;
   final String price;
   final String ref;
-  final String age;
-  final String nbPlayers;
-  final String timing;
+  final int age;
+  final int  nbPlayers;
+  final int  timing;
   final String video;
 
   // constructeur pour créer un objet Toy
