@@ -9,8 +9,6 @@ import 'toy.dart';
 
 class ToyRepository implements Repository {
 
- 
-
   String dataUrl = "http://15.236.148.78/products/all?fbclid=IwAR21fNlKPwKyDidzqYi4NJoGBbfx2NLey0GC0mPfrRfOTj63QaXPOaDTTsU"; 
   
 
@@ -22,9 +20,22 @@ class ToyRepository implements Repository {
     final toys  = <Toy>[];
     final uri = Uri.parse(dataUrl);
     final reponse = await http.get(uri);
-    print(reponse.body);
-    final apiReponse = json.decode(reponse.body) as Map<String,dynamic>;
-    print(apiReponse);
+    if (reponse.statusCode == 200){
+      print("Réception OK");
+      // decodage du json => construction d'une liste
+      List<dynamic> list = jsonDecode(reponse.body);
+      for(int i=0; i<list.length; i++ ){
+        print(i);
+        print(list[i]);
+        toys.add(Toy.fromJson(list[i]));
+      }
+    }
+
+  
+
+    // JSON { }
+    //final apiReponse = json.decode(reponse.body) as Map<String,dynamic>;
+    //print(apiReponse);
     
 
     // await 

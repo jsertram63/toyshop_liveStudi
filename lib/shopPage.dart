@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:live_shoptoyts_start_6avril2022/toys_page.dart';
 
-
 class ToyHomePage extends StatelessWidget {
   const ToyHomePage({ Key? key }) : super(key: key);
 
