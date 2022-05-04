@@ -9,7 +9,7 @@ import 'models/toy.dart';
 // FUTURE POUR EFFECTUER LES REQUETES
 // FUTUREBUILDER 
 
-class ToysList extends StatefulWidget {
+class ToysList extends StatefulWidget { 
   const ToysList({ Key? key }) : super(key: key);
   @override
   State<ToysList> createState() => _ToysListState();
@@ -25,7 +25,10 @@ class _ToysListState extends State<ToysList> {
       builder:(context, snapshot) {
       final toys = snapshot.data;
       if (toys == null){
-        return const Center(child: CircularProgressIndicator());
+        return  Center(child: Container(child: Column(children: [
+          CircularProgressIndicator(),
+          Text("Chargement des données")
+        ]),));
       }
       return ListView.builder(
         padding: const EdgeInsets.all(16),
@@ -42,8 +45,10 @@ class _ToysListState extends State<ToysList> {
       ),
       subtitle: Text(toy.description, style: TextStyle(fontSize: 12),) ,
       onTap: (){
+
+        // gesture onTap (un touché sur une cellule (row))
         Navigator.of(context).push<MaterialPageRoute>(
-         MaterialPageRoute(builder:   (context) => ToyDetailPage())
+         MaterialPageRoute(builder:   (context) => ToyDetailPage(toyParse: toy))
         );
       },
       trailing: ClipRRect(borderRadius: BorderRadius.circular(8),

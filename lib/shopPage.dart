@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:live_shoptoyts_start_6avril2022/add_toy.dart';
 import 'package:live_shoptoyts_start_6avril2022/toys_page.dart';
 
 class ToyHomePage extends StatelessWidget {
@@ -9,6 +10,14 @@ class ToyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title:const Text("Toy Store")),
       body:const ToysList(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed:(){
+             Navigator.of(context).push<MaterialPageRoute>(
+         MaterialPageRoute(builder:   (context) => const NewToy())
+        );
+        print("Ajout d'un jouet");
+      }),
     );
   }
 }
