@@ -30,29 +30,35 @@ class _ToysListState extends State<ToysList> {
           Text("Chargement des données")
         ]),));
       }
-      return ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemCount: toys.length,
+      return ListView.separated(
+        separatorBuilder:((context, index) => const Divider(
+          height: 5,
+          color: Colors.grey,
+          endIndent: 50,
+          indent: 50,
+        )),      
         itemBuilder: (BuildContext context, int position){
           return _buildRows(toys[position]);
-        });
+        }, itemCount: toys.length,);
     });
   }
   Widget _buildRows(Toy toy){
-    return ListTile(
-      title: Padding(padding: const EdgeInsets.only(bottom: 16.0),
-      child: Text(toy.name, style: const TextStyle(fontSize: 14)),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20, top: 20),
+      child: ListTile(
+        title: Padding(padding: const EdgeInsets.only(bottom: 16.0),
+        child: Text(toy.name, style: const TextStyle(fontSize: 14)),
+        ),
+        subtitle: Text(toy.description, style: TextStyle(fontSize: 12),) ,
+        onTap: (){
+          // gesture onTap (un touché sur une cellule (row))
+          Navigator.of(context).push<MaterialPageRoute>(
+           MaterialPageRoute(builder:   (context) => ToyDetailPage(toyParse: toy))
+          );
+        },
+        trailing: ClipRRect(borderRadius: BorderRadius.circular(8),
+        child: Image.network(toy.img),),
       ),
-      subtitle: Text(toy.description, style: TextStyle(fontSize: 12),) ,
-      onTap: (){
-
-        // gesture onTap (un touché sur une cellule (row))
-        Navigator.of(context).push<MaterialPageRoute>(
-         MaterialPageRoute(builder:   (context) => ToyDetailPage(toyParse: toy))
-        );
-      },
-      trailing: ClipRRect(borderRadius: BorderRadius.circular(8),
-      child: Image.network(toy.img),),
     );
   }
 

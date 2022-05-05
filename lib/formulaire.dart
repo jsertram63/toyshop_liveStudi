@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'controller/toycontroller.dart';
 
 
 class Formulaire extends StatefulWidget {
   const Formulaire({ Key? key }) : super(key: key);
-
- 
-
   @override
   State<Formulaire> createState() => _FormulaireState();
 }
 
 class _FormulaireState extends State<Formulaire> {
+  final _controller = ToyController();
 
 
    var nomJouet = "";
@@ -33,6 +32,7 @@ class _FormulaireState extends State<Formulaire> {
       border:OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
       onChanged: (value){
           description = value;
+      
       },),
        ),
        Padding(
@@ -45,7 +45,9 @@ class _FormulaireState extends State<Formulaire> {
       ),
        ),
        ElevatedButton(onPressed: (){
-
+         print("Boutton valider pressé");
+        
+        _controller.createToys();
        }, child: Text("Valider"))
       
       

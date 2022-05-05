@@ -7,6 +7,9 @@ class ToyController {
   Future<List<Toy>> fetchToys() {
     print("Repository");
   return _repository.getToys();
-} 
+}
+  Future createToys(){
+    return _repository.postToys();
+  }
 
 }

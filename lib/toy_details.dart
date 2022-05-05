@@ -7,7 +7,7 @@ import 'models/toy.dart';
 
 class ToyDetailPage extends StatelessWidget {
 
-
+  // objet passé au moment de la navigation 
   final Toy toyParse;
 
   const ToyDetailPage({ Key? key,required this.toyParse }) : super(key: key);
