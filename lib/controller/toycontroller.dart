@@ -1,3 +1,4 @@
+import 'package:live_shoptoyts_start_6avril2022/formulaire.dart';
 import 'package:live_shoptoyts_start_6avril2022/models/repository.dart';
 import 'package:live_shoptoyts_start_6avril2022/models/toy.dart';
 import 'package:live_shoptoyts_start_6avril2022/models/toy_repository.dart';
@@ -8,8 +9,8 @@ class ToyController {
     print("Repository");
   return _repository.getToys();
 }
-  Future createToys(){
-    return _repository.postToys();
+  Future createToys(ToyModel model){
+    return _repository.postToys(model);
   }
 
 }
