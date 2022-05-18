@@ -11,9 +11,11 @@ class SitePage extends StatefulWidget {
 class _SitePageState extends State<SitePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child:const Text("Liste de lieu"),
-      
+    return Scaffold(
+      body: Container(
+        child:Center(child: const Text("Liste de lieu")),
+        
+      ),
     );
   }
 }
