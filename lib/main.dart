@@ -17,7 +17,29 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ToyHomePage()
+      home: DefaultTabController(
+        length: 2,
+        child:  Scaffold(
+          appBar: AppBar(title:const Text("API"),
+          bottom: const TabBar(tabs:[
+            Tab(icon: Icon(Icons.toys),),
+            Tab(icon: Icon(Icons.photo),)
+          ]
+          ),
+          
+          
+          ),
+          body: const TabBarView(children: [
+            ToyHomePage(),
+            Center(
+              child: Text("Liste de lieu"),
+            )
+          ]),
+          
+          
+        ),
+
+      )
     );
   }
 }

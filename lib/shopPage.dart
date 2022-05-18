@@ -8,7 +8,7 @@ class ToyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:const Text("Toy Store")),
+     // appBar: AppBar(title:const Text("Toy Store")),
       body:const ToysList(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
