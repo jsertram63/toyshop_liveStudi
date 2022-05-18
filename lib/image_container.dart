@@ -18,8 +18,12 @@ class ImageContainer extends StatelessWidget {
       width: width,
       height: heigth,
       decoration: BoxDecoration(
+        
         color: placeholder,
-        image: url.contains('http') ? DecorationImage(image: NetworkImage(url)) : null
+        image: url.contains('http') ? DecorationImage(image: NetworkImage(url),
+        fit: BoxFit.fill
+        ) : null
+      
       ),
       
     );

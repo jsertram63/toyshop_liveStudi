@@ -90,11 +90,7 @@ class ToyRepository implements Repository {
      }
   }
 
-  @override
-  Future<List<Toy>> getToys2() {
-    // TODO: implement getToys2
-    throw UnimplementedError();
-  }
+
 
 
 
