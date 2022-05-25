@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:live_shoptoyts_start_6avril2022/siteList.dart';
 
 
 class SitePage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _SitePageState extends State<SitePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child:Center(child: const Text("Liste de lieu")),
+        child:SiteList()
         
       ),
     );
