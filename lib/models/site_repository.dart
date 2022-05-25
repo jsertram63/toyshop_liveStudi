@@ -11,6 +11,8 @@ class SiteRepository implements SRepository {
 
   var dataUrl = "http://137.184.217.221/app/site/";
 
+  // URL pour inserer un lieu
+  var dataUrl2 = "http://137.184.217.221/app/site/add";
  
 
   @override 
