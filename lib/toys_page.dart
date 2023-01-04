@@ -24,6 +24,7 @@ class _ToysListState extends State<ToysList> {
       future: _controller.fetchToys(),  // <====== le controleur récupère les données 
       builder:(context, snapshot) {
       final toys = snapshot.data;
+    
       if (toys == null){
         return  Center(child: Container(child: Column(children: [
           CircularProgressIndicator(),
